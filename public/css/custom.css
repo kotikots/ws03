@@ -24,17 +24,17 @@
    ---------------------------------------------------------------- */
 
 :root {
-  --color-header:       #455A64;   /* Header at navigation bar */
-  --color-accent:       #FFC107;   /* "Post a Job" button at mga highlight */
-  --color-page-bg:      #f7f7f7;   /* Background ng buong page */
+  --color-header:       #512DA8;   /* Header at navigation bar */
+  --color-accent:       #FF4081;   /* "Post a Job" button at mga highlight */
+  --color-page-bg:      #f4f4f4;   /* Background ng buong page */
   --color-card-bg:      #FFFFFF;   /* Background ng mga card/box */
-  --color-heading:      #FFFFFF;   /* Kulay ng mga title at heading */
-  --color-body-text:    #000000;   /* Regular na body text */
-  --color-link:         #FFFFFF;   /* Mga clickable na links */
-  --color-tag-bg:       #FFFFFF;   /* Background ng mga tag/badge */
-  --color-tag-text:     #000000;   /* Text ng mga tag/badge */
-  --color-footer:       #000000;   /* Footer background */
-  --showcase-overlay:   rgba(0, 0, 0, 0.5); /* Hero banner overlay
+  --color-heading:      #212121;   /* Kulay ng mga title at heading */
+  --color-body-text:    #212121;   /* Regular na body text */
+  --color-link:         #512DA8;   /* Mga clickable na links */
+  --color-tag-bg:       #F3E5F5;   /* Background ng mga tag/badge */
+  --color-tag-text:     #673AB7;   /* Text ng mga tag/badge */
+  --color-footer:       #673AB7;   /* Footer background */
+  --showcase-overlay:   rgba(81, 45, 168, 0.45); /* Hero banner overlay
                                                0.0 = transparent
                                                0.9 = halos itim */
 }
@@ -103,6 +103,10 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: var(--color-link) !important;
+}
+
+footer a {
+  color: #ffffff !important;
 }
 
 header {
