@@ -1,0 +1,16 @@
+{
+    "name": "kotikots/ws03",
+    "description": "Job seeker application",
+    "authors" : [
+        {
+            "name": "Khian Vivar",
+            "email": "kotigithubb@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}
