@@ -93,7 +93,11 @@
 body {
   font-family: var(--font-body) !important;
   background-color: var(--color-page-bg) !important;
-  color: var(--color-body-text) !important;
+  color: var(--color-body-text);
+}
+
+.text-white {
+  color: #ffffff !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,6 +115,19 @@ footer a {
 
 header {
   background-color: var(--color-header) !important;
+  color: #ffffff !important;
+}
+
+header a,
+header h1,
+header p,
+header span,
+header .text-white {
+  color: #ffffff !important;
+}
+
+header a:hover {
+  color: #ffffff !important;
 }
 
 .bg-blue-900,
