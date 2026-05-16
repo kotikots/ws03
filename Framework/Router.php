@@ -6,12 +6,24 @@ class Router
 {
     protected $routes = [];
 
-    public function registerRoute($method, $uri, $controller) 
+    /**
+     * Add new route
+     * 
+     * @param string $uri
+     * @param string $action
+     * @param string $method
+     * @return void
+     */
+
+    public function registerRoute($method, $uri, $action)
     {
+        list($controller, $controllerMethod) = explode('@', $action);
+
         $this->routes[] = [
             'method' => $method,
             'uri' => $uri,
-            'controller' => $controller
+            'controller' => $controller,
+            'controllerMethod' => $controllerMethod
         ];
     }
 
@@ -20,8 +32,9 @@ class Router
      * 
      * @param string $uri
      * @param string $controller
+     * @return void
      */
-    
+
     public function get($uri, $controller)
     {
         $this->registerRoute('GET', $uri, $controller);
@@ -32,6 +45,7 @@ class Router
      * 
      * @param string $uri
      * @param string $controller
+     *  @return void
      */
 
     public function post($uri, $controller)
@@ -45,6 +59,7 @@ class Router
      * 
      * @param string $uri
      * @param string $controller
+     * @return void
      */
 
     public function put($uri, $controller)
@@ -57,6 +72,7 @@ class Router
      * 
      * @param string $uri
      * @param string $controller
+     * @return void
      */
 
     public function delete($uri, $controller)
@@ -94,7 +110,7 @@ class Router
                 //Extract controller and controller method
                 $controller = 'App\\Controllers\\' . $route['controller'];
                 $controllerMethod = $route['controllerMethod'];
-                
+
                 //Instantiate controller class
                 $controllerInstance = new $controller();
                 $controllerInstance->$controllerMethod();
@@ -103,5 +119,4 @@ class Router
         }
         $this->error();
     }
-    
 }
