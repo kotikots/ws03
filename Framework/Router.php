@@ -95,22 +95,42 @@ class Router
         $requestMethod = $_SERVER['REQUEST_METHOD'];
 
         foreach ($this->routes as $route) {
+            // split the current URI into segments
+            $uriSegments = explode('/', trim($uri, '/'));
 
-        $uriSegemts = explode('/', trim('uri', '/'));
+            // split the route  
+            $routeSegments = explode('/', trim($route['uri'], '/'));
 
-        \inspect($uriSegemts);
+            $match = true;
 
-            // if ($route['uri'] === $uri && $route['method'] === $method) {
-            //     //Extract controller and controller method
-            //     $controller = 'App\\Controllers\\' . $route['controller'];
-            //     $controllerMethod = $route['controllerMethod'];
+            if (count($uriSegments) === count($routeSegments) && strtoupper($route['method']) === $requestMethod) {
+                $params = [];
+                $match = true;
 
-            //     //Instantiate controller class
-            //     $controllerInstance = new $controller();
-            //     $controllerInstance->$controllerMethod();
-            //     return;
+                for ($i = 0; $i < count($uriSegments); $i++) {
+                    // if the uri does not match and there is no value between the {id}
+                    if (($routeSegments[$i] !== $uriSegments[$i]) && !preg_match('/\{(.+?)\}/', $routeSegments[$i])) {
+                        $match = false;
+                        break;
+                    }
+                    // check for params and add to $params array
+                    if (preg_match('/\{(.+?)\}/', $routeSegments[$i], $matches)) {
+                        $params[$matches[1]] = $uriSegments[1];
+                    }
+                }
+                if($match) {
+                    //Extract controller and and controller method
+                    $controller = "App\\Controllers\\{$route['controller']}";
+                    $controllerMethod = $route['controllerMethod'];
+
+                    //initiate controller class
+                    $controllerInstance = new $controller();
+                    $controllerInstance->$controllerMethod($params);    
+                    return;
+                }
             }
         }
+
         ErrorController::notFound();
     }
-
+}

@@ -61,3 +61,10 @@ function loadPartial($name)
 function formatSalary($salary) {
     return '$' .  number_format(floatval($salary));
 }
+
+function inspect($value)
+{
+    echo '<pre style="background:#1e1e1e;color:#f8f8f2;padding:1rem;border-radius:8px;line-height:1.5;">';
+    echo htmlspecialchars(print_r($value, true), ENT_QUOTES, 'UTF-8');
+    echo '</pre>';
+}
