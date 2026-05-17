@@ -64,7 +64,25 @@ function formatSalary($salary) {
 
 function inspect($value)
 {
-    echo '<pre style="background:#1e1e1e;color:#f8f8f2;padding:1rem;border-radius:8px;line-height:1.5;">';
-    echo htmlspecialchars(print_r($value, true), ENT_QUOTES, 'UTF-8');
+    echo '<pre>';
+    var_dump($value);
     echo '</pre>';
+}
+
+function inspectAndDie($value)
+{
+    echo '<pre>';
+    die(var_dump($value));
+    echo '</pre>';
+}
+
+/**
+ * Sanitize Data 
+ * 
+ * @param string $value
+ * @return string
+ */
+
+function sanitize($dirty){
+    return filter_var(trim($dirty), FILTER_SANITIZE_SPECIAL_CHARS);
 }
