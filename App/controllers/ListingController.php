@@ -231,5 +231,5 @@ if (!empty($errors)) {
      
     redirect('/listings/' . $id);
 }
-    }
+    }   
 }
