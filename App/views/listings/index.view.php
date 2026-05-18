@@ -1,7 +1,6 @@
 <?= loadPartial('head') ?>
 <?= loadPartial('navbar') ?>
 <?= loadPartial('top-banner') ?>
-<
 
 <!-- Job Listings -->
 <section>

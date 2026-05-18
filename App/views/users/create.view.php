@@ -13,6 +13,7 @@
               name="name"
               placeholder="Full Name"
               class="w-full px-4 py-2 border rounded focus:outline-none"
+              value="<?= $user['name'] ?? '' ?>"
             />
           </div>
           <div class="mb-4">
@@ -21,6 +22,7 @@
               name="email"
               placeholder="Email Address"
               class="w-full px-4 py-2 border rounded focus:outline-none"
+              value="<?= $user['email'] ?? '' ?>"
             />
           </div>
            <div class="mb-4">
@@ -29,6 +31,7 @@
               name="city"
               placeholder="City"
               class="w-full px-4 py-2 border rounded focus:outline-none"
+              value="<?= $user['city'] ?? '' ?>"
             />
           </div>
            <div class="mb-4">
@@ -37,6 +40,7 @@
               name="state"
               placeholder="State"
               class="w-full px-4 py-2 border rounded focus:outline-none"
+              value="<?= $user['state'] ?? '' ?>"
             />
           </div>
           <div class="mb-4">
@@ -44,15 +48,14 @@
               type="password"
               name="password"
               placeholder="Password"
-              class="w-full px-4 py-2 border rounded focus:outline-none"
-            />
+              class="w-full px-4 py-2 border rounded focus:outline-none" />
           </div>
           <div class="mb-4">
             <input
               type="password"
               name="password_confirmation"
               placeholder="Confirm Password"
-              class="w-full px-4 py-2 border rounded focus:outline-none"
+              class="w-full px-4 py-2 border rounded focus:outline-none" 
             />
           </div>
           <button
