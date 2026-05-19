@@ -99,10 +99,10 @@ class UserController {
         $this->db->query("INSERT INTO users (name, email, city, state, password) VALUES (:name, :email, :city, :state, :password)", $params);
 
         //get new user id 
-        $userId = $this->db->conn->lastInsertId();
+        $userid = $this->db->conn->lastInsertId();
 
         Session::set('user', [
-            'id' => $userId,
+            'id' => $userid,
             'name' => $name,
             'email' => $email,
             'city' => $city,
