@@ -1,93 +1,60 @@
-/* ============================================================
+﻿/* ============================================================
    JOBSEEK — CUSTOM STYLESHEET
    Pangalan ng Student: ______________________________
-   Theme Name:          ______________________________ // Anong style would best describe this stylesheet
+   Theme Name:          Premium Dark SaaS — Midnight Indigo
    ============================================================ */
 
-/* --- Google Fonts Import (optional) ---
-   Pumunta sa https://fonts.google.com, pumili ng font,
-   i-copy ang @import link, i-paste dito.
-
-   Halimbawa:
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-*/
-
+/* --- Google Fonts Import --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 
 /* ----------------------------------------------------------------
    SECTION 1: MGA KULAY (Colors)
    ----------------------------------------------------------------
-   Palitan ang bawat hex code ng kulay na gusto mo.
+   Palette: Premium Dark SaaS — Midnight Indigo
    Tip: https://coolors.co — para pumili ng color palette
         https://htmlcolorcodes.com — para makita ang hex codes
    ---------------------------------------------------------------- */
 
 :root {
-  --color-header:       #512DA8;   /* Header at navigation bar */
-  --color-accent:       #FF4081;   /* "Post a Job" button at mga highlight */
-  --color-page-bg:      #f4f4f4;   /* Background ng buong page */
-  --color-card-bg:      #FFFFFF;   /* Background ng mga card/box */
-  --color-heading:      #212121;   /* Kulay ng mga title at heading */
-  --color-body-text:    #212121;   /* Regular na body text */
-  --color-link:         #512DA8;   /* Mga clickable na links */
-  --color-tag-bg:       #F3E5F5;   /* Background ng mga tag/badge */
-  --color-tag-text:     #673AB7;   /* Text ng mga tag/badge */
-  --color-footer:       #673AB7;   /* Footer background */
-  --showcase-overlay:   rgba(81, 45, 168, 0.45); /* Hero banner overlay
-                                               0.0 = transparent
-                                               0.9 = halos itim */
+  --color-header:       #0F172A;
+  --color-accent:       #6366F1;
+  --color-page-bg:      #0B0F19;
+  --color-card-bg:      #1E293B;
+  --color-heading:      #F8FAFC;
+  --color-body-text:    #94A3B8;
+  --color-link:         #6366F1;
+  --color-tag-bg:       #1E1B4B;
+  --color-tag-text:     #A5B4FC;
+  --color-footer:       #0F172A;
+  --color-footer-sub:   #070A10;
+  --showcase-overlay:   rgba(7, 10, 16, 0.72);
 }
 
 
 /* ----------------------------------------------------------------
    SECTION 2: MGA FONT (Typography)
-   ----------------------------------------------------------------
-   Palitan ng font name na gusto mo.
-   Kung gagamit ng Google Font, i-import muna sa taas ng file.
-
-   Halimbawa ng built-in fonts (hindi na kailangan ng import):
-     'Georgia', serif
-     'Arial', sans-serif
-     'Verdana', sans-serif
-     'Times New Roman', serif
-     'Courier New', monospace
    ---------------------------------------------------------------- */
 
-
-  :root {
-    --font-heading: 'Inter', sans-serif;  /* Font para sa mga title at heading */
-    --font-body: 'Open Sans', sans-serif;     /* Font para sa regular na text */
-  }
+:root {
+  --font-heading: 'Inter', sans-serif;
+  --font-body:    'Open Sans', sans-serif;
+}
 
 
 /* ----------------------------------------------------------------
    SECTION 3: HUGIS AT ESTILO (Shape & Style)
-   ----------------------------------------------------------------
-   --border-radius:
-     0px      = matuwid / sharp corners
-     4px      = konting rounding
-     8px      = medyo rounded
-     16px     = malakas na rounding
-     9999px   = pill shape / fully round
-
-   --card-shadow:
-     none                           = walang shadow
-     0 2px 8px rgba(0,0,0,0.08)    = mahinang shadow
-     0 4px 16px rgba(0,0,0,0.20)   = malakas na shadow
    ---------------------------------------------------------------- */
 
 :root {
-  --border-radius: 8px;
-  --card-shadow:   0 2px 8px rgba(0, 0, 0, 0.08);
+  --border-radius:   8px;
+  --card-shadow:     0 4px 24px rgba(0, 0, 0, 0.40);
+  --transition-base: all 0.2s ease-in-out;
 }
 
 
-
-
 /* ================================================================
-   === HUWAG I-EDIT ANG SECTION NA ITO (unless gusto mong advanced!) ===
-   === Ito ang code na gumagamit ng iyong mga variables sa itaas.  ===
+   BASE STYLES
    ================================================================ */
 
 body {
@@ -97,7 +64,7 @@ body {
 }
 
 .text-white {
-  color: #ffffff !important;
+  color: #F8FAFC !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -107,15 +74,22 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: var(--color-link) !important;
+  transition: var(--transition-base);
 }
 
 footer a {
-  color: #ffffff !important;
+  color: #94A3B8 !important;
+  transition: var(--transition-base);
+}
+
+footer a:hover {
+  color: #F8FAFC !important;
 }
 
 header {
   background-color: var(--color-header) !important;
-  color: #ffffff !important;
+  color: #F8FAFC !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 header a,
@@ -123,11 +97,11 @@ header h1,
 header p,
 header span,
 header .text-white {
-  color: #ffffff !important;
+  color: #F8FAFC !important;
 }
 
 header a:hover {
-  color: #ffffff !important;
+  color: #A5B4FC !important;
 }
 
 .bg-blue-900,
@@ -145,20 +119,25 @@ header a:hover {
 
 .hover\:bg-yellow-600:hover {
   background-color: var(--color-accent) !important;
-  filter: brightness(0.88);
+  filter: brightness(1.12);
 }
 
-.bg-yellow-500, 
+.bg-yellow-500,
 .bg-blue-500,
 .bg-green-500 {
   background-color: var(--color-accent) !important;
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .bg-white {
   background-color: var(--color-card-bg) !important;
   border-radius: var(--border-radius) !important;
   box-shadow: var(--card-shadow) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.bg-gray-100 {
+  background-color: var(--color-page-bg) !important;
 }
 
 .bg-indigo-100 {
@@ -183,6 +162,33 @@ button,
   border-radius: var(--border-radius) !important;
 }
 
+/* ----------------------------------------------------------------
+   INPUTS — Glowing Dark Focus Ring
+   ---------------------------------------------------------------- */
+
+input,
+textarea,
+select {
+  background-color: #0F172A !important;
+  border-color: #334155 !important;
+  border-radius: var(--border-radius) !important;
+  color: #F8FAFC !important;
+  transition: var(--transition-base) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #475569 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border-color: #6366F1 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.20), 0 0 12px rgba(99, 102, 241, 0.12) !important;
+}
+
 .overlay {
   background-color: var(--showcase-overlay) !important;
 }
@@ -192,70 +198,48 @@ footer,
   background-color: var(--color-footer) !important;
 }
 
-.bg-gray-100 {
-  background-color: var(--color-page-bg) !important;
+.copy-right {
+  background-color: var(--color-footer-sub) !important;
+  padding-bottom: 1rem !important;
 }
 
 .bg-red-500,
 .bg-white h2 {
-    color: #000000 !important;
-}
-
-.copy-right {
-    background-color: #CFD8DC !important;
-    padding-bottom: 1rem !important;
+  color: #F8FAFC !important;
 }
 
 .bg-white a.block.back-to-listings {
-    background-color: transparent !important;
-    color: var(--color-header) !important;
+  background-color: transparent !important;
+  color: var(--color-accent) !important;
 }
 
 .text-primary-brand {
-    color: var(--color-header) !important;
+  color: var(--color-accent) !important;
 }
 
 .h2-style {
-    font-size: 3.5rem !important;      /* Massive size like a hero H1 */
-    font-weight: 900 !important;
+  font-size: 3.5rem !important;
+  font-weight: 900 !important;
 }
 
 .marg-bot {
-    margin-bottom: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 a.btn-primary-action {
-    background-color: var(--color-header) !important;
-    color: #FFFFFF !important; /* Force text to white */
-    display: block !important;
-    width: fit-content !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 8px !important;
-}
-
-.copy-right {
-  padding-bottom: 1rem !important;
-}
-
-/* ----------------------------------------------------------------
-   ADVANCED ZONE — Para sa gustong mag-explore pa!
-   ----------------------------------------------------------------
-   Alisin ang /* at */ para i-activate ang isang rule.
-   /* ---------------------------------------------------------------- */
-
-/* Hover effect sa mga link */
-/* a:hover {
-  text-decoration: underline;
-  opacity: 0.85;
-} */
-
-/* Kulay ng input fields */
-/* input, select, textarea {
-  border-color: var(--color-link) !important;
+  background-color: var(--color-accent) !important;
+  color: #FFFFFF !important;
+  display: block !important;
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 10px 24px !important;
   border-radius: var(--border-radius) !important;
-} */
+  transition: var(--transition-base) !important;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.30) !important;
+}
 
-/* Kulay ng success badge */
-/* .bg-green-100 { background-color: #d1fae5 !important; }
-   .text-green-800 { color: #065f46 !important; } */
+a.btn-primary-action:hover {
+  filter: brightness(1.12) !important;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45) !important;
+}
